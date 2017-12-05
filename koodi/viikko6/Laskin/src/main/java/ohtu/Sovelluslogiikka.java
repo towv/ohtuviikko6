@@ -3,6 +3,12 @@ package ohtu;
 public class Sovelluslogiikka {
  
     private int tulos;
+
+    public Sovelluslogiikka() {
+        this.tulos = 0;
+    }
+    
+    
  
     public void plus(int luku) {
         tulos += luku;
@@ -18,5 +24,9 @@ public class Sovelluslogiikka {
  
     public int tulos() {
         return tulos;
+    }
+    
+    public void setTulos(int tulos) {
+        this.tulos = tulos;
     }
 }

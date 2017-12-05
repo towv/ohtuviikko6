@@ -17,6 +17,7 @@ public class Summa implements Komento {
     private Sovelluslogiikka sovellus;
     private JTextField tulos;
     private JTextField syote;
+    private int vanhaTulos;
 
     public Summa(Sovelluslogiikka sovellus, JTextField tulos, JTextField syote) {
         this.sovellus = sovellus;
@@ -26,11 +27,23 @@ public class Summa implements Komento {
 
     @Override
     public void suorita() {
+        vanhaTulos = sovellus.tulos();
 
         int b = Integer.parseInt(this.syote.getText());
         sovellus.plus(b);
 
+        asetaTekstikenttaTulos();
+    }
+
+    private void asetaTekstikenttaTulos() {
         this.tulos.setText("" + sovellus.tulos());
+    }
+
+    @Override
+    public void peru() {
+        sovellus.setTulos(vanhaTulos);
+        asetaTekstikenttaTulos();
+
     }
 
 }
