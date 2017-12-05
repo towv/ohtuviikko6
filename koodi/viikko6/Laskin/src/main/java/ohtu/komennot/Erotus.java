@@ -28,8 +28,12 @@ public class Erotus implements Komento {
     @Override
     public void suorita() {
         vanhaTulos = sovellus.tulos();
-        int b = Integer.parseInt(this.syote.getText());
-        sovellus.miinus(b);
+        try {
+            int b = Integer.parseInt(this.syote.getText());
+            sovellus.miinus(b);
+
+        } catch (Exception e) {
+        }
 
         asetaTekstikenttaTulos();
     }
@@ -37,7 +41,7 @@ public class Erotus implements Komento {
     private void asetaTekstikenttaTulos() {
         this.tulos.setText("" + sovellus.tulos());
     }
-    
+
     @Override
     public void peru() {
         sovellus.setTulos(vanhaTulos);

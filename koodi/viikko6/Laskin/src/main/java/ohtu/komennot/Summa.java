@@ -28,9 +28,11 @@ public class Summa implements Komento {
     @Override
     public void suorita() {
         vanhaTulos = sovellus.tulos();
-
-        int b = Integer.parseInt(this.syote.getText());
-        sovellus.plus(b);
+        try {
+            int b = Integer.parseInt(this.syote.getText());
+            sovellus.plus(b);
+        } catch (Exception e) {
+        }
 
         asetaTekstikenttaTulos();
     }
